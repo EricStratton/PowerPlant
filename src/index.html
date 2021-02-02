@@ -5,10 +5,11 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
     <script type="text/javascript" src="plant.js"></script>
+    <link href="../src/css/styles.css" rel="stylesheet" type="text/css">
     <title>Grow Your Plant</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="normal">
       <div class="grow-buttons">
         <button class="btn-success" id="feed">Add soil</button>
         <button class="btn-success" id="feed2">Add fertilizer</button>
@@ -21,6 +22,13 @@
       <h3><div id="soil-value">0</div></h3>
       <h3><div id="water-value">0</div></h3>
       <h3><div id="light-value">0</div></h3>
+    </div>
+    <div class="container" id="indoor">
+      <div class="grow-buttons">
+        <button class="btn-success" id="feedIndoor">Add indoor fertilizer</button>
+      </div>
+      <h1>Indoor Plant's Values</h1>
+      <h3><div id="indoorSoil-value">0</div></h3>
     </div>
   </body>
 </html>

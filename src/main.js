@@ -23,10 +23,11 @@ const storeState = () => {
   };
 };
 
-const stateControl = storeState();
+// Controls // 
+const stateControl = storeState(); // instance of state 
+const indoorControl = storeState();
 
-// User Interface Logic //
-
+// Control : Outdoor Plants - these are the 'machines' that the function factory created
 const feed = changeState("soil")(1);
 const superFood = changeState("soil")(5);
 
@@ -35,8 +36,18 @@ const superWater = changeState("water")(5);
 
 const sun = changeState("light")(5);
 
+// Control : Indoor Plants
+const indoorFood = changeState("indoorSoil")(2);
+const indoorFertil = changeState("indoorSoil")(3); // it's a function that alters soil by 3
 
-$(document).ready(function() {
+const indoorHydrate = changeState("water")(1);
+const indoorSupHydrate = changeState("water")(2);
+
+const indoorSun = changeState("light")(1);
+
+// User Interface Logic //
+
+$(document).ready(function() { // tied to stateControl
 
   $('#feed').click(function() {
     const newState = stateControl(feed);
@@ -68,9 +79,37 @@ $(document).ready(function() {
     $('#soil-value').text(`Soil: ${currentState.soil}`);
   });
 
-
 });
 
+
+$(document).ready(function() {
+
+  $('#feedIndoor').click(function() { // this is how you would alter the state of indoorControl // 
+    const newState = indoorControl(indoorFood);
+    $('#indoorSoil-value').text(`Soil: ${newState.indoorSoil}`);
+  });
+
+  $('#feedIndoor').click(function() { // this is how you would alter the state of indoorControl // 
+    const currentState = indoorControl(indoorFertil);
+    $('#soil-value').text(`Soil: ${currentState.soil}`);
+  });
+
+  $('#feedIndoor').click(function() { // this is how you would alter the state of indoorControl // 
+    const currentState = indoorControl(indoorHydrate);
+    $('#soil-value').text(`Soil: ${currentState.soil}`);
+  });
+
+  $('#feedIndoor').click(function() { // this is how you would alter the state of indoorControl // 
+    const currentState = indoorControl(indoorSupHydrate);
+    $('#soil-value').text(`Soil: ${currentState.soil}`);
+  });
+
+  $('#feedIndoor').click(function() { // this is how you would alter the state of indoorControl // 
+    const currentState = indoorControl(indoorSun);
+    $('#soil-value').text(`Soil: ${currentState.soil}`);
+  });
+  
+});
 
 
 
