@@ -39,20 +39,39 @@ const sun = changeState("light")(5);
 $(document).ready(function() {
 
   $('#feed').click(function() {
+    const newState = stateControl(feed);
+    $('#soil-value').text(`Soil: ${newState.soil}`);
+  });
+
+  $('#feed2').click(function() {
     const newState = stateControl(superFood);
-    4('#soil-value').text(`Soil: ${newState.soil}`);
+    $(`#soil-value`).text(`Soil: ${newState.soil}`);
+  });
+
+  $('#hydrate').click(function() {
+    const newState = stateControl(hydrate);
+    $('#water-value').text(`Water: ${newState.water}`);
+  });
+
+  $('#hydrate2').click(function() {
+    const newState = stateControl(superWater);
+    $('#water-value').text(`Water: ${newState.water}`);
+  });
+
+  $('#sun').click(function() {
+    const newState = stateControl(sun);
+    $('#light-value').text(`Light: ${newState.light}`);
   });
 
   $('#show-state').click(function() {
     const currentState = stateControl();
-    $('#soil-value').text(`Soil: ${currentState.soil}`)
+    $('#soil-value').text(`Soil: ${currentState.soil}`);
   });
 
 
 });
 
-feed;
-superFood;
-hydrate;
-superWater;
-sun;
+
+
+
+
