@@ -89,24 +89,24 @@ $(document).ready(function() {
     $('#indoorSoil-value').text(`Soil: ${newState.indoorSoil}`);
   });
 
-  $('#feedIndoor').click(function() { // this is how you would alter the state of indoorControl // 
-    const currentState = indoorControl(indoorFertil);
-    $('#soil-value').text(`Soil: ${currentState.soil}`);
+  $('#feedIndoor2').click(function() { // this is how you would alter the state of indoorControl // 
+    const newState = indoorControl(indoorFertil);
+    $('#indoorSoil-value').text(`Soil: ${newState.indoorSoil}`);
   });
 
   $('#feedIndoor').click(function() { // this is how you would alter the state of indoorControl // 
-    const currentState = indoorControl(indoorHydrate);
-    $('#soil-value').text(`Soil: ${currentState.soil}`);
+    const newState = indoorControl(indoorHydrate);
+    $('#').text(`Soil: ${newState.soil}`);
   });
 
   $('#feedIndoor').click(function() { // this is how you would alter the state of indoorControl // 
-    const currentState = indoorControl(indoorSupHydrate);
-    $('#soil-value').text(`Soil: ${currentState.soil}`);
+    const newState = indoorControl(indoorSupHydrate);
+    $('#').text(`Soil: ${newState.soil}`);
   });
 
   $('#feedIndoor').click(function() { // this is how you would alter the state of indoorControl // 
-    const currentState = indoorControl(indoorSun);
-    $('#soil-value').text(`Soil: ${currentState.soil}`);
+    const newState = indoorControl(indoorSun);
+    $('#').text(`Soil: ${newState.soil}`);
   });
   
 });
